@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="jumbotron row">
+        <div class="content">
+            {% block menu %}
+                <p>
+                    Wybierz restaurację
+                </p>
+                <select class="restaurant-selector">
+                    {% for restaurant in restaurants %}
+                        <option data-restaurant-id="{{ restaurant.restaurantId }}">{{ restaurant.name }}</option>
+                        <option data-restaurant-id="{{ restaurant.restaurantId }}">TEST</option>
+                        <option data-restaurant-id="{{ restaurant.restaurantId }}">TEST 2</option>
+                    {% endfor %}
+                </select>
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+    {% stylesheets filter="scssphp" output="css/app.css"
+    "assets/scss/main.scss"
+    "assets/css/**/*" %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
+{% block javascripts %}
+    {% javascripts filter="?jsqueeze" output="js/app.js"
+    "assets/js/*" %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+

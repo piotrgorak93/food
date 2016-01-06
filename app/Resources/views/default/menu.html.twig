@@ -1,0 +1,6 @@
+{% for dish in menu %}
+    <input type="checkbox" name="food" value="{{ dish.itemId }}" title="" />
+    <span class="dish">{{ dish.itemName }} {{ dish.description }}</span>
+    <span class="price pull-md-right">{{ dish.itemPrice }}</span><br>
+{% endfor %}
+

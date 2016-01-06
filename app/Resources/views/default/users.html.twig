@@ -1,0 +1,14 @@
+<ul class="user-list row">
+    {% for user in users %}
+        <li class="food-list col-sm-12 col-md-6 col-lg-3">
+            <span class="user">{{ user.userName|upper }}</span>
+
+            <div class="menu-content">
+            </div>
+            <div class="sum-container">
+                <span class="pull-md-left">Suma:</span><span class="order-sum pull-md-right">0</span>
+            </div>
+        </li>
+    {% endfor %}
+</ul>
+<button id="summary-button" type="button" class="btn btn-primary btn-sm center-block">Dalej</button>
